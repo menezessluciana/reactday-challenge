@@ -37,8 +37,6 @@ class Exercise1 extends Component {
     }
 
     render() {
-        console.log(this.state.availableElements);
-        console.log(this.state.selectedElements);
         const getPokemonIconURL = pokemonNumber => `https://www.serebii.net/pokedex-sm/icon/${pokemonNumber}.png`;
         return (
             <div className={classes.Exercise1}>
