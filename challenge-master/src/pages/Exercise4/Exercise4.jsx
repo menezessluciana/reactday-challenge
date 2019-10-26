@@ -44,6 +44,7 @@ export default function Exercise4() {
     const minima = require('../../assets/icons/minima.svg');
     const media = require('../../assets/icons/media.svg');
     const maxima = require('../../assets/icons/maxima.svg');
+    const nublado = require('../../assets/icons/nublado.svg');
 
     return (
        <div className={classes.Container}>
@@ -73,9 +74,23 @@ export default function Exercise4() {
                             </div>
                          </div>
                     </div>
+
+
                     <div style={{display: 'flex', alignItems: 'flex-start', marginTop: '30px'}}>
-                        <img src={media} alt="" />
-                        <span style={{color: '#4B6584', fontSize: '100px'}}>23°</span> 
+                        <img src={media} alt="" style={{marginTop: '20px', marginRight: '25px'}} />
+                        <span style={{color: '#4B6584', fontSize: '170px'}}>23°</span> 
+                    </div>
+                    <div style={{borderRadius: '50px', 
+                                border: '1px solid',
+                                borderColor: '#2BCBBA',
+                                height:'30px',
+                                width: '229px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginLeft: '35px'
+                                }}>
+                                 <span style={{color: '#4B6584', fontSize: '14px'}}>Sensação térmica de 22°</span>
                     </div>
                 </div>
           </div>
