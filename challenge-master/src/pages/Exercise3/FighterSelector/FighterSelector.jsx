@@ -12,7 +12,6 @@ function FighterSelector() {
     }
 
     useEffect(() => {
-        setTimeout(() => {
             setFighterSelectionHistory([
                 ...fighterSelectionHistory,
                 {
@@ -20,7 +19,7 @@ function FighterSelector() {
                     time: (new Date()).toLocaleTimeString()
                 }
             ]);
-        }, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fighter])
 
     return (

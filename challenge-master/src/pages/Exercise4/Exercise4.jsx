@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DescriptionExercise from "../DescriptionExercise";
-import prototypeClimao from "../../assets/prototypes/climao.png";
+import { ReactComponent as WeatherIcon } from "../../assets/icons/LOGO.svg";
 import classes from "./Excercise4.module.scss";
 
 const prototypeUrl =
@@ -41,14 +40,45 @@ const instructions = [
 ];
 
 export default function Exercise4() {
+    const localizacao = require('../../assets/icons/localizacao.svg');
+    const minima = require('../../assets/icons/minima.svg');
+    const media = require('../../assets/icons/media.svg');
+    const maxima = require('../../assets/icons/maxima.svg');
+
     return (
-        <>
-            <DescriptionExercise instructions={instructions} />
-            <img
-                alt="Protótipo"
-                src={prototypeClimao}
-                className={classes.PrototypeImage}
-            />
-        </>
+       <div className={classes.Container}>
+          <div className={classes.Header}>
+              <WeatherIcon />
+              <input placeholder="Buscar cidade" className={classes.InputSearch} type="text">
+              </input>
+          </div>
+          <div className={classes.GeneralContent}>
+                <div className={classes.TodayContent}>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <div>
+                            <div style={{display: 'flex', alignItems: 'center'}}>
+                                <img src={localizacao} alt="" />
+                                <span className={classes.City}>Campinas</span>
+                            </div>
+                            <span className={classes.Date}>Quin, 10 de outubro de 2019</span>
+                        </div>
+                        <div>
+                            <div style={{display: 'inline', marginRight:'18px'}}>
+                                <img src={minima} alt="" style={{marginRight:'8px'}} />
+                                <span style={{color: '#4B6584', fontWeight: 'bold'}}>Min 15°</span>
+                            </div>
+                            <div style={{display: 'inline'}}>
+                                <img src={maxima} alt=""  style={{marginRight:'8px'}} />
+                                <span style={{color:'#4B6584',  fontWeight: 'bold'}}>Max 26°</span>
+                            </div>
+                         </div>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'flex-start', marginTop: '30px'}}>
+                        <img src={media} alt="" />
+                        <span style={{color: '#4B6584', fontSize: '100px'}}>23°</span> 
+                    </div>
+                </div>
+          </div>
+       </div>
     );
 }

@@ -12,16 +12,12 @@ const images = {
 };
 
 class Fighter extends Component {
-    state = {
-        fighter: this.props.fighter
-    };
 
     render() {
-        const { fighter } = this.state;
         return (
             <div
                 style={{
-                    backgroundImage: `url(${images[fighter]})`,
+                    backgroundImage: `url(${images[this.props.fighter]})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',

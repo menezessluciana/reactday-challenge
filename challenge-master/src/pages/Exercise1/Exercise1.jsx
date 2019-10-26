@@ -19,13 +19,13 @@ class Exercise1 extends Component {
         selectedElements: []
     }
     
-    componentWillMount() {
+    componentDidMount() {
         const getPokemonNumber = pokemonNumber => {
             if (pokemonNumber < 10) return `00${pokemonNumber}`;
             if (pokemonNumber < 100) return `0${pokemonNumber}`;
             return pokemonNumber;
         };
-        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=500`).then(res => {
+        axios.get(`https://pokeapi.co/api/v2/pokemon?limit=50`).then(res => {
             const availableElements = res.data.results.map((item, ix) => {
                 return ({
                     number: getPokemonNumber(ix + 1),
@@ -37,6 +37,8 @@ class Exercise1 extends Component {
     }
 
     render() {
+        console.log(this.state.availableElements);
+        console.log(this.state.selectedElements);
         const getPokemonIconURL = pokemonNumber => `https://www.serebii.net/pokedex-sm/icon/${pokemonNumber}.png`;
         return (
             <div className={classes.Exercise1}>
@@ -61,7 +63,7 @@ class Exercise1 extends Component {
                                                 this.setState({
                                                         selectedElements: this.state.availableElements.splice(index, 1).concat(this.state.selectedElements)
                                                 });
-                                            }} />
+                                        }} />
                                         </td>
                                     </tr>
                                 ))}
